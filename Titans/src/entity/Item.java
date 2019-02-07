@@ -33,6 +33,12 @@ public class Item {
 		public void setDistance(double distance) {
 			this.distance = distance;
 		}
+		public void setLocalDate(String date) {
+			this.localDate = date;
+		}
+		public void setLocalTime(String time) {
+			this.localTime = time;
+		}
 		public Item build() {
 			return new Item(this);
 		}
@@ -44,6 +50,8 @@ public class Item {
 		private String imageUrl;
 		private String url;
 		private double distance;
+		private String localDate;
+		private String localTime;
 	}
 	
 	private String itemId;
@@ -54,6 +62,8 @@ public class Item {
 	private String imageUrl;
 	private String url;
 	private double distance;
+	private String localDate;
+	private String localTime;
 	
 	//De-duplicate items in recommendation result
 	//de-dup based on item_id
@@ -92,6 +102,8 @@ public class Item {
 		this.imageUrl = builder.imageUrl;
 		this.url = builder.url;
 		this.distance = builder.distance;
+		this.localDate = builder.localDate;
+		this.localTime = builder.localTime;
 	}
 	
 	public String getItemId() {
@@ -118,6 +130,12 @@ public class Item {
 	public double getDistance() {
 		return distance;
 	}
+	public String getDate() {
+		return localDate;
+	}
+	public String getTime() {
+		return localTime;
+	}
 	public JSONObject toJSONObject() {
 		//for frontend code
 		JSONObject obj = new JSONObject();
@@ -130,6 +148,8 @@ public class Item {
 			obj.put("image_url", imageUrl);
 			obj.put("url", url);
 			obj.put("distance", distance);
+			obj.put("date", localDate);
+			obj.put("time", localTime);
 		} catch(JSONException e) {
 			e.printStackTrace();
 		}
