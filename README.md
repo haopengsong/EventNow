@@ -2,4 +2,4 @@
 
 An event search web service
 
-Try a demo [HERE](http://34.219.223.40:8080/Titans/index.html)
+Try a demo [HERE](http://18.236.255.173:8080/Titans/index.html)
